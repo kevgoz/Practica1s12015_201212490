@@ -1,21 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package plantasvszombis;
 
-/**
- *
- * @author Gamusa
- */
+
 public class PlantasvsZombis {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+       
+        Principal pantalla_inicio = new Principal();
+        
+        pantalla_inicio.setVisible(true);
+        pantalla_inicio.setLocationRelativeTo(null);
+        
+       
     }
     
 }

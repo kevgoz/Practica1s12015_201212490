@@ -27,10 +27,10 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnjugadorplanta = new javax.swing.JButton();
+        btnjugadorzombi = new javax.swing.JButton();
+        btniniciarjuego = new javax.swing.JButton();
+        btneliminardatos = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
 
@@ -38,13 +38,18 @@ public class Principal extends javax.swing.JFrame {
         setTitle("Plantas vrs Zombis");
         setName("Plantas vrs Zombis"); // NOI18N
 
-        jButton1.setText("Jugador Plantas");
+        btnjugadorplanta.setText("Jugador Plantas");
+        btnjugadorplanta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnjugadorplantaActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Jugador Zombis");
+        btnjugadorzombi.setText("Jugador Zombis");
 
-        jButton3.setText("Comenzar Juego");
+        btniniciarjuego.setText("Comenzar Juego");
 
-        jButton4.setText("Eliminar datos");
+        btneliminardatos.setText("Eliminar datos");
 
         jLabel1.setFont(new java.awt.Font("MV Boli", 1, 24)); // NOI18N
         jLabel1.setText("Plantas vrs Zombis");
@@ -68,13 +73,13 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(162, 162, 162)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButton2)
-                                .addComponent(jButton1)))
+                                .addComponent(btnjugadorzombi)
+                                .addComponent(btnjugadorplanta)))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(68, 68, 68)
-                            .addComponent(jButton3)
+                            .addComponent(btniniciarjuego)
                             .addGap(59, 59, 59)
-                            .addComponent(jButton4))))
+                            .addComponent(btneliminardatos))))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -83,13 +88,13 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(54, 54, 54)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
-                .addComponent(jButton1)
+                .addComponent(btnjugadorplanta)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(btnjugadorzombi)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(btniniciarjuego)
+                    .addComponent(btneliminardatos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(btnSalir)
                 .addGap(19, 19, 19))
@@ -102,6 +107,13 @@ public class Principal extends javax.swing.JFrame {
        
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnjugadorplantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjugadorplantaActionPerformed
+        JugadorPlanta plantas = new JugadorPlanta();
+        plantas.setVisible(true);
+        plantas.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnjugadorplantaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,10 +152,10 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btneliminardatos;
+    private javax.swing.JButton btniniciarjuego;
+    private javax.swing.JButton btnjugadorplanta;
+    private javax.swing.JButton btnjugadorzombi;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

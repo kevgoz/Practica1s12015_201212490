@@ -41,19 +41,23 @@ public void nuevodato(String dato){
 
 }
 
+
 public String recorrer(){
+      
 
-    String info;
-    Nodo aux = cabeza;
-    
-    while(cabeza!= null){
-    
-    info = aux.datos + "\n ";
-    aux = aux.siguiente;
-    
-    }
+String info="";
+Nodo aux = cabeza;
+
+while(cabeza!= null){
+
+info = aux.datos + "\n ";
+aux = aux.siguiente;
 
 
+}
+       return null;
+
+}
     
 
 }
