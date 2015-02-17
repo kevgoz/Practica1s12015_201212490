@@ -3,61 +3,51 @@ package plantasvszombis;
 
 public class Usuarios {
     
-   Nodo cabeza;
-   
-   Usuarios(){
-   
-   cabeza = null;
-   
-   }
-    
-public boolean SinUsuarios(){
+    public String nombre;
+    public int cantidad;
+    public String otro;
+  
 
-    if (cabeza== null) {
-            
-        return true;
-        } else {
+    public Usuarios(String nombre, int cantidad, String otro) {
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+        this.otro = otro;
         
-            return false;
-        }
-
-}
-
-public void nuevodato(String dato){
-
-    Nodo nuevo = new Nodo(dato);
-    if(SinUsuarios()){
-        
-        cabeza = nuevo;
-
-    }
-    
-    else{
-    
-        nuevo.siguiente = cabeza;
-        cabeza = nuevo;
-    
     }
 
-}
+    Usuarios() {
+        
+    }
 
+    public String getNombre() {
+        return nombre;
+    }
 
-public String recorrer(){
-      
+    public void set(String nombre) {
+        this.nombre = nombre;
+    }
 
-String info="";
-Nodo aux = cabeza;
+    public int getCant() {
+        return cantidad;
+    }
 
-while(cabeza!= null){
+    public void setCant(int cantidad) {
+        this.cantidad = cantidad;
+    }
 
-info = aux.datos + "\n ";
-aux = aux.siguiente;
+    public String getOtro() {
+        return otro;
+    }
 
+    public void setNombres(String nombres) {
+        this.otro = nombres;
+    }
 
-}
-       return null;
+   
 
-}
-    
+    @Override
+    public String toString() {
+        return nombre +" "+cantidad+" "+otro;
+    }
 
 }

@@ -16,11 +16,38 @@ public class JugadorPlanta extends javax.swing.JFrame {
      */
     
        Usuarios jugador_planta = new Usuarios();
+       ListaJugadores jugadorplanta = new ListaJugadores();
       // Usuarios jugador_planta1 = new Usuarios();
     public JugadorPlanta() {
         initComponents();
         
-       
+       ta.setVisible(false);
+      
+       lblotro.setVisible(false);
+       txtotro.setVisible(false);
+       btnagregar.setVisible(false);
+        
+    }
+    
+    
+    public void agregarElementos(){
+        String otro = "otro";
+        int cant = Integer.parseInt(txtcantidad.getText());
+        Usuarios c=new Usuarios(txtjugador.getText(),cant,otro);
+        jugadorplanta.insertar(c);
+        limpiar();
+        
+        
+    }
+    
+     public void limpiar(){
+        txtcantidad.setText(null);
+        txtjugador.setText(null);
+      
+    }
+     
+      public void listasElementos(){
+        ta.setText(jugadorplanta.presentar());   
         
     }
 
@@ -40,8 +67,12 @@ public class JugadorPlanta extends javax.swing.JFrame {
         btnguardar = new javax.swing.JButton();
         btnver = new javax.swing.JButton();
         btnmenu = new javax.swing.JButton();
+        btnaddcampos = new javax.swing.JButton();
+        txtotro = new javax.swing.JTextField();
+        lblotro = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ta = new javax.swing.JTextArea();
+        btnagregar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,36 +101,58 @@ public class JugadorPlanta extends javax.swing.JFrame {
             }
         });
 
+        btnaddcampos.setText("Agregar Campos");
+        btnaddcampos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnaddcamposActionPerformed(evt);
+            }
+        });
+
+        lblotro.setText("Otro:");
+
         ta.setColumns(20);
         ta.setRows(5);
         jScrollPane1.setViewportView(ta);
+
+        btnagregar.setText("Agregar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtjugador, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtjugador, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(lblotro))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtotro)
+                                            .addComponent(txtcantidad))))
+                                .addGap(31, 31, 31)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnguardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnagregar)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(54, 54, 54)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtcantidad)))
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnguardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                .addComponent(btnmenu)
-                .addGap(31, 31, 31))
+                        .addGap(65, 65, 65)
+                        .addComponent(btnaddcampos)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,11 +171,24 @@ public class JugadorPlanta extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(btnver)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnmenu, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtotro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblotro))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnagregar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnmenu)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnaddcampos)
+                        .addContainerGap())))
         );
 
         pack();
@@ -130,23 +196,16 @@ public class JugadorPlanta extends javax.swing.JFrame {
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
       
-      
-        jugador_planta.nuevodato(txtjugador.toString());
+       agregarElementos();
       //  jugador_planta1.nuevodato(txtcantidad.toString());
     }//GEN-LAST:event_btnguardarActionPerformed
 
     private void btnverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnverActionPerformed
      
-      try{
-        String info = jugador_planta.recorrer();
-        //String info2 = jugador_planta1.recorrer();
-        ta.setText(info);
-       // lblmostrarlista.setText(info2);
-      }catch(Exception E){
-      
-          System.err.println(E);
-      
-      }
+       ta.setVisible(true);
+     
+        listasElementos();
+       
         
        
     }//GEN-LAST:event_btnverActionPerformed
@@ -157,6 +216,13 @@ public class JugadorPlanta extends javax.swing.JFrame {
         prc.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnmenuActionPerformed
+
+    private void btnaddcamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddcamposActionPerformed
+        
+        txtotro.setVisible(true);
+        lblotro.setVisible(true);
+        btnagregar.setVisible(true);
+    }//GEN-LAST:event_btnaddcamposActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,14 +260,18 @@ public class JugadorPlanta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnaddcampos;
+    private javax.swing.JButton btnagregar;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnmenu;
     private javax.swing.JButton btnver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblotro;
     private javax.swing.JTextArea ta;
     private javax.swing.JTextField txtcantidad;
     private javax.swing.JTextField txtjugador;
+    private javax.swing.JTextField txtotro;
     // End of variables declaration//GEN-END:variables
 }
