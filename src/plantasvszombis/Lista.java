@@ -1,10 +1,19 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package plantasvszombis;
 
-public class ListaJugadores {
+/**
+ *
+ * @author Gamusa
+ */
+public class Lista {
     
-    public  Nodo nodo;
-    public ListaJugadores(){
+     
+    public  Nodos nodo;
+    public Lista(){
         this.nodo=null;
     }
     public boolean esVacia(){
@@ -16,13 +25,13 @@ public class ListaJugadores {
         }
     }
     
-        public void insertar(Usuarios dato){
+        public void insertar(Jugadores datos){
             
-        Nodo nuevo=new Nodo(dato);
+        Nodos nuevo = new Nodos(datos);
         if(esVacia()){
             nodo=nuevo;
         }else{
-            Nodo aux=nodo;
+            Nodos aux=nodo;
             while(aux.getSiguiente()!=null){
                 aux=aux.getSiguiente();
             }
@@ -32,7 +41,7 @@ public class ListaJugadores {
         
          public String presentar(){
         String texto="";
-        Nodo aux=nodo;
+        Nodos aux=nodo;
         while(aux!=null){
             texto +=aux.getDato()+" \n ";
             System.out.println(texto+" \n ");
@@ -41,10 +50,10 @@ public class ListaJugadores {
         return texto;
     }
          
-          public void insertaFin(Usuarios dato){
+          public void insertaFin(Jugadores dato){
         if(!esVacia()){
-            Nodo nuevo=new Nodo(dato);
-            Nodo aux=nodo;
+            Nodos nuevo=new Nodos(dato);
+            Nodos aux=nodo;
             while(aux.getSiguiente()!= null){
                 aux=aux.getSiguiente();
             }
@@ -53,16 +62,6 @@ public class ListaJugadores {
         }
     }
           
-     
-    public Nodo buscarNodoIndice(int indice){
-		Nodo aux = nodo;
-		int tamano = 0;
-	    while(aux!= null){
-	    	if(tamano==indice)
-	    		return aux;
-	    	aux = aux.siguiente;
-	    	tamano++;
-	    }
-		return null;
-	}
+      
+    
 }

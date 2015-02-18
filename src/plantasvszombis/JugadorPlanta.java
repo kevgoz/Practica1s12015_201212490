@@ -5,6 +5,8 @@
  */
 package plantasvszombis;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Gamusa
@@ -18,6 +20,8 @@ public class JugadorPlanta extends javax.swing.JFrame {
        Usuarios jugador_planta = new Usuarios();
        ListaJugadores jugadorplanta = new ListaJugadores();
       // Usuarios jugador_planta1 = new Usuarios();
+       
+       static Object jugador1;
     public JugadorPlanta() {
         initComponents();
         
@@ -33,10 +37,19 @@ public class JugadorPlanta extends javax.swing.JFrame {
     public void agregarElementos(){
         String otro = "otro";
         int cant = Integer.parseInt(txtcantidad.getText());
-        Usuarios c=new Usuarios(txtjugador.getText(),cant,otro);
+        Usuarios c=new Usuarios(txtjugador.getText(),txtcantidad.getText());
         jugadorplanta.insertar(c);
-        limpiar();
+       
         
+    }
+    
+     public void agregarElementosnuevo(){
+        String otro = "otro";
+        int cant = Integer.parseInt(txtcantidad.getText());
+        String a="";
+        Usuarios c=new Usuarios(txtotro.getText(),a);
+        jugadorplanta.insertaFin(c);
+       
         
     }
     
@@ -49,6 +62,16 @@ public class JugadorPlanta extends javax.swing.JFrame {
       public void listasElementos(){
         ta.setText(jugadorplanta.presentar());   
         
+    }
+      
+       public void buscarElementos(){
+      
+           int indice =0;
+        //a.buscarNodoIndice(resp).dato
+         jugador1 = jugadorplanta.buscarNodoIndice(indice).getDato();
+          JOptionPane.showMessageDialog(null,jugadorplanta.buscarNodoIndice(indice).datos);
+           System.out.println(jugadorplanta.buscarNodoIndice(indice).getDato());
+           
     }
 
     /**
@@ -73,6 +96,7 @@ public class JugadorPlanta extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         ta = new javax.swing.JTextArea();
         btnagregar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,6 +139,13 @@ public class JugadorPlanta extends javax.swing.JFrame {
         jScrollPane1.setViewportView(ta);
 
         btnagregar.setText("Agregar");
+        btnagregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnagregarActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("PLANTAS");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -146,7 +177,8 @@ public class JugadorPlanta extends javax.swing.JFrame {
                                     .addComponent(btnagregar)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(54, 54, 54)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addComponent(btnaddcampos)
@@ -157,7 +189,9 @@ public class JugadorPlanta extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(84, 84, 84)
+                .addGap(39, 39, 39)
+                .addComponent(jLabel3)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtjugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
@@ -205,6 +239,7 @@ public class JugadorPlanta extends javax.swing.JFrame {
        ta.setVisible(true);
      
         listasElementos();
+        buscarElementos();
        
         
        
@@ -222,7 +257,14 @@ public class JugadorPlanta extends javax.swing.JFrame {
         txtotro.setVisible(true);
         lblotro.setVisible(true);
         btnagregar.setVisible(true);
+        txtotro.setText("");
     }//GEN-LAST:event_btnaddcamposActionPerformed
+
+    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
+       
+        agregarElementosnuevo();
+        
+    }//GEN-LAST:event_btnagregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -267,6 +309,7 @@ public class JugadorPlanta extends javax.swing.JFrame {
     private javax.swing.JButton btnver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblotro;
     private javax.swing.JTextArea ta;

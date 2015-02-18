@@ -16,6 +16,8 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+      
+       
     }
 
     /**
@@ -33,6 +35,7 @@ public class Principal extends javax.swing.JFrame {
         btneliminardatos = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
+        lblborrar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Plantas vrs Zombis");
@@ -46,6 +49,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btnjugadorzombi.setText("Jugador Zombis");
+        btnjugadorzombi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnjugadorzombiActionPerformed(evt);
+            }
+        });
 
         btniniciarjuego.setText("Comenzar Juego");
 
@@ -61,14 +69,15 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        lblborrar.setText("jLabel2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(162, 162, 162)
@@ -79,7 +88,12 @@ public class Principal extends javax.swing.JFrame {
                             .addGap(68, 68, 68)
                             .addComponent(btniniciarjuego)
                             .addGap(59, 59, 59)
-                            .addComponent(btneliminardatos))))
+                            .addComponent(btneliminardatos)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(lblborrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -96,7 +110,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(btniniciarjuego)
                     .addComponent(btneliminardatos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(btnSalir)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSalir)
+                    .addComponent(lblborrar))
                 .addGap(19, 19, 19))
         );
 
@@ -114,6 +130,16 @@ public class Principal extends javax.swing.JFrame {
         plantas.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnjugadorplantaActionPerformed
+
+    private void btnjugadorzombiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjugadorzombiActionPerformed
+      
+        JugadorZombis jugadorzombis = new JugadorZombis();
+        
+        jugadorzombis.setVisible(true);
+        jugadorzombis.setLocationRelativeTo(null);
+        this.dispose();
+        
+    }//GEN-LAST:event_btnjugadorzombiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,5 +183,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnjugadorplanta;
     private javax.swing.JButton btnjugadorzombi;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblborrar;
     // End of variables declaration//GEN-END:variables
 }
