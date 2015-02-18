@@ -21,7 +21,7 @@ public class JugadorPlanta extends javax.swing.JFrame {
        ListaJugadores jugadorplanta = new ListaJugadores();
       // Usuarios jugador_planta1 = new Usuarios();
        
-       static Object jugador1;
+       static String jugador1;
        
         public JugadorPlanta() {
         initComponents();
@@ -69,9 +69,12 @@ public class JugadorPlanta extends javax.swing.JFrame {
       
            int indice =0;
         //a.buscarNodoIndice(resp).dato
-         jugador1 = jugadorplanta.buscarNodoIndice(indice).getDato();
-          JOptionPane.showMessageDialog(null,jugadorplanta.buscarNodoIndice(indice).datos);
+           Object ob = jugadorplanta.buscarNodoIndice(indice).getDato();
+          //JOptionPane.showMessageDialog(null,jugadorplanta.buscarNodoIndice(indice).datos);
            System.out.println(jugadorplanta.buscarNodoIndice(indice).getDato());
+           
+          jugador1 = ob.toString();
+           
            
     }
 
@@ -260,6 +263,11 @@ public class JugadorPlanta extends javax.swing.JFrame {
     private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
        
         agregarElementosnuevo();
+        
+      
+        
+        
+        
         
     }//GEN-LAST:event_btnagregarActionPerformed
 

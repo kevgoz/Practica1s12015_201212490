@@ -1,7 +1,5 @@
 
 package plantasvszombis;
-import javax.swing.JOptionPane;
-import static plantasvszombis.JugadorPlanta.jugador1;
 
 
 
@@ -11,7 +9,7 @@ public class JugadorZombis extends javax.swing.JFrame {
        Usuarios jugador_planta = new Usuarios();
        ListaJugadores jugadorplanta = new ListaJugadores();
     
-    
+        static String jugador2;
     public JugadorZombis() {
         initComponents();
         
@@ -60,9 +58,11 @@ public class JugadorZombis extends javax.swing.JFrame {
       
            int indice =0;
         //a.buscarNodoIndice(resp).dato
-         jugador1 = jugadorplanta.buscarNodoIndice(indice).getDato();
-          JOptionPane.showMessageDialog(null,jugadorplanta.buscarNodoIndice(indice).datos);
+        Object ob  =  jugadorplanta.buscarNodoIndice(indice).getDato();
+         // JOptionPane.showMessageDialog(null,jugadorplanta.buscarNodoIndice(indice).datos);
            System.out.println(jugadorplanta.buscarNodoIndice(indice).getDato());
+           
+           jugador2 = ob.toString();
            
     }
     

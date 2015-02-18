@@ -56,6 +56,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btniniciarjuego.setText("Comenzar Juego");
+        btniniciarjuego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btniniciarjuegoActionPerformed(evt);
+            }
+        });
 
         btneliminardatos.setText("Eliminar datos");
 
@@ -140,6 +145,15 @@ public class Principal extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_btnjugadorzombiActionPerformed
+
+    private void btniniciarjuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btniniciarjuegoActionPerformed
+        // TODO add your handling code here:
+        CargarPlantas cp = new CargarPlantas();
+        cp.setVisible(true);
+        cp.setLocationRelativeTo(null);
+        
+        this.dispose();
+    }//GEN-LAST:event_btniniciarjuegoActionPerformed
 
     /**
      * @param args the command line arguments
