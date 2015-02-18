@@ -1,32 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package plantasvszombis;
-
 import javax.swing.JOptionPane;
+import static plantasvszombis.JugadorPlanta.jugador1;
 
-/**
- *
- * @author Gamusa
- */
+
+
 public class JugadorZombis extends javax.swing.JFrame {
 
-    /**
-     * Creates new form JugadorZombis
-     */
+   
+       Usuarios jugador_planta = new Usuarios();
+       ListaJugadores jugadorplanta = new ListaJugadores();
     
-    Jugadores jugador= new Jugadores();
-    Lista lista = new Lista();
+    
     public JugadorZombis() {
         initComponents();
         
-        lblotro.setVisible(false);
-        txtotro.setVisible(false);
         ta.setVisible(false);
-        btnaddnewcampos.setVisible(false);
       
+       lblotro.setVisible(false);
+       txtotro.setVisible(false);
+       btnaddnewcampos.setVisible(false);
     }
     
     
@@ -34,11 +27,21 @@ public class JugadorZombis extends javax.swing.JFrame {
     public void agregarElementos(){
         String otro = "otro";
         int cant = Integer.parseInt(txtcantidad.getText());
-        Jugadores c=new Jugadores(txtnombre.getText());
-        lista.insertar(c);
-        limpiar();
+        Usuarios c=new Usuarios(txtnombre.getText(),txtcantidad.getText());
+        jugadorplanta.insertar(c);
+      
         
       
+    }
+    
+     public void agregarElementosnuevo(){
+        String otro = "otro";
+        int cant = Integer.parseInt(txtcantidad.getText());
+        String a="";
+        Usuarios c=new Usuarios(txtotro.getText(),a);
+        jugadorplanta.insertaFin(c);
+       
+        
     }
     
      public void limpiar(){
@@ -48,10 +51,20 @@ public class JugadorZombis extends javax.swing.JFrame {
     }
      
       public void listasElementos(){
-        ta.setText(lista.presentar());   
+        ta.setText(jugadorplanta.presentar());   
         
     }
 
+      
+       public void buscarElementos(){
+      
+           int indice =0;
+        //a.buscarNodoIndice(resp).dato
+         jugador1 = jugadorplanta.buscarNodoIndice(indice).getDato();
+          JOptionPane.showMessageDialog(null,jugadorplanta.buscarNodoIndice(indice).datos);
+           System.out.println(jugadorplanta.buscarNodoIndice(indice).getDato());
+           
+    }
     
      
     
@@ -209,6 +222,7 @@ public class JugadorZombis extends javax.swing.JFrame {
         txtotro.setVisible(true);
         ta.setVisible(true);
         btnaddnewcampos.setVisible(true);
+        txtotro.setText("");
         
         
        
@@ -219,13 +233,16 @@ public class JugadorZombis extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       ;
+        
          ta.setVisible(true);
      
         listasElementos();
+        buscarElementos();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnaddnewcamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddnewcamposActionPerformed
-        // TODO add your handling code here:
+        agregarElementosnuevo();
     }//GEN-LAST:event_btnaddnewcamposActionPerformed
 
     /**
