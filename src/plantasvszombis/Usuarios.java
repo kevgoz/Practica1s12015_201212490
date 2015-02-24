@@ -6,6 +6,8 @@ public class Usuarios {
     public String nombre;
     public String cantidad;
     public String otro;
+
+   
   
 
     public Usuarios(String nombre, String cantidad) {
@@ -13,6 +15,13 @@ public class Usuarios {
         this.cantidad = cantidad;
           
     }
+    
+     public Usuarios(String otr) {
+        this.otro = otr;
+        
+          
+    }
+
 
     Usuarios() {
         
@@ -34,12 +43,20 @@ public class Usuarios {
         this.cantidad = cantidad;
     }
 
- 
+     public String getOtro() {
+        return otro;
+    }
+
+    public void setOtro(String otro) {
+        this.otro = otro;
+    }
    
 
     @Override
     public String toString() {
-        return nombre +" "+cantidad;
+        return nombre +"->"+cantidad;
     }
 
+
+    
 }

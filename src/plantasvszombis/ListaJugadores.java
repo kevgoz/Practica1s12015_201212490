@@ -78,6 +78,24 @@ public class ListaJugadores {
 		return null;
 	}
     
+    public String recorrido(Nodo aux){
+    // aux = nodo;
+    if( aux == null){
+    
+        return null;
+    
+    }
+    else{
+    
+        stringnodos = stringnodos + aux.getDato() + "->" + aux.getSiguiente().getDato() + "\n";
+        
+     
+    }
+       
+    recorrido(aux.getSiguiente());
+    return stringnodos;
+    }
+    
     
    public void generar(){
     
@@ -87,32 +105,29 @@ public class ListaJugadores {
         try
         {
            String f = "C:\\Users\\Gamusa\\Desktop\\archivo.txt";
-           // pw = new PrintWriter(fichero);
-          
-            stringnodos = stringnodos + "digraph { \n";
+           stringnodos = stringnodos + "digraph  G { rankdir=LR node [shape=box, color=blue] \n";
             
-            
-            ///////////////////
+            /////////////////
             Nodo aux=nodo;
+            
             while(aux!=null){
+            
+                if(aux.getSiguiente()== null){
+                stringnodos = stringnodos + aux.getDato() + ";" + "\n" ;
+                    System.out.println("aux es nulo");
+                }
+                else{
                 
-              if(aux != null){
+                stringnodos = stringnodos + aux.getDato() + "->" + "\n" ;
+                    System.out.println("aux no es nullo");
+                }
+                
+                aux=aux.getSiguiente();
+                 
               
-                   stringnodos = stringnodos + aux.getDato() + "->";
-                   aux=aux.getSiguiente();
-              
-              }  
-              else{
-              
-                  stringnodos = stringnodos + ";";
-                  
-              }
+            }//////////////////
            
-            
-            }
-            
-           
-            stringnodos = stringnodos + "\n }"; 
+            stringnodos = stringnodos + " \n }"; 
             
             fichero = new FileWriter(f);
             fichero.write(stringnodos);
