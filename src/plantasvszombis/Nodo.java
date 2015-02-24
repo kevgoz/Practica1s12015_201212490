@@ -3,7 +3,7 @@ package plantasvszombis;
 
 public class Nodo {
     
-    public Usuarios datos;
+   public Usuarios datos;
    public int clave;
     public Nodo siguiente;
     

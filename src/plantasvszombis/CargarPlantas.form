@@ -45,7 +45,6 @@
                                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btneliminar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -210,6 +209,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Agregar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnaddActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnmodificar">
       <Properties>

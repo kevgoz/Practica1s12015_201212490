@@ -45,7 +45,7 @@ public class JugadorPlanta extends javax.swing.JFrame {
     }
     
      public void agregarElementosnuevo(){
-        String otro = "otro";
+        
         int cant = Integer.parseInt(txtcantidad.getText());
         String a="";
         Usuarios c=new Usuarios(txtotro.getText(),a);
