@@ -1,6 +1,8 @@
 
 package plantasvszombis;
 
+import java.io.FileWriter;
+
 public class Nodo {
     
    public Usuarios datos;
@@ -37,5 +39,4 @@ public class Nodo {
     }
     
 
-   
 }
