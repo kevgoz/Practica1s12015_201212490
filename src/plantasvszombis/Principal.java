@@ -36,10 +36,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
         lblborrar = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Plantas vrs Zombis");
         setName("Plantas vrs Zombis"); // NOI18N
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnjugadorplanta.setText("Jugador Plantas");
         btnjugadorplanta.addActionListener(new java.awt.event.ActionListener() {
@@ -47,6 +49,7 @@ public class Principal extends javax.swing.JFrame {
                 btnjugadorplantaActionPerformed(evt);
             }
         });
+        getContentPane().add(btnjugadorplanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 127, -1, -1));
 
         btnjugadorzombi.setText("Jugador Zombis");
         btnjugadorzombi.addActionListener(new java.awt.event.ActionListener() {
@@ -54,6 +57,7 @@ public class Principal extends javax.swing.JFrame {
                 btnjugadorzombiActionPerformed(evt);
             }
         });
+        getContentPane().add(btnjugadorzombi, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 170, -1, -1));
 
         btniniciarjuego.setText("Comenzar Juego");
         btniniciarjuego.addActionListener(new java.awt.event.ActionListener() {
@@ -61,11 +65,14 @@ public class Principal extends javax.swing.JFrame {
                 btniniciarjuegoActionPerformed(evt);
             }
         });
+        getContentPane().add(btniniciarjuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 213, -1, -1));
 
         btneliminardatos.setText("Eliminar datos");
+        getContentPane().add(btneliminardatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 213, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("MV Boli", 1, 24)); // NOI18N
         jLabel1.setText("Plantas vrs Zombis");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 54, 263, 22));
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -73,53 +80,13 @@ public class Principal extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 264, 76, -1));
 
         lblborrar.setText("jLabel2");
+        getContentPane().add(lblborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 264, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(162, 162, 162)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnjugadorzombi)
-                                .addComponent(btnjugadorplanta)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(68, 68, 68)
-                            .addComponent(btniniciarjuego)
-                            .addGap(59, 59, 59)
-                            .addComponent(btneliminardatos)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(lblborrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(61, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addComponent(btnjugadorplanta)
-                .addGap(18, 18, 18)
-                .addComponent(btnjugadorzombi)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btniniciarjuego)
-                    .addComponent(btneliminardatos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSalir)
-                    .addComponent(lblborrar))
-                .addGap(19, 19, 19))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Zombi5.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 310));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -197,6 +164,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnjugadorplanta;
     private javax.swing.JButton btnjugadorzombi;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblborrar;
     // End of variables declaration//GEN-END:variables
 }

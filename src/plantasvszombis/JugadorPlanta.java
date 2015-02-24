@@ -260,8 +260,54 @@ public class JugadorPlanta extends javax.swing.JFrame {
      
         listasElementos();
         buscarElementos();
-       
         
+        jugadorplanta.generar();
+        
+        try {
+
+        //path del dot.exe,por lo general es la misma, pero depende de donde hayas instalado el paquete de Graphviz
+
+       
+        String dotPath = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe";
+
+        //path del archivo creado con el codigo del graphviz que queremos
+
+        String fileInputPath = "C:\\Users\\Gamusa\\Desktop\\archivo.txt";
+
+        //path de salida del grafo, es decir el path de la imagen que vamos a crear con graphviz
+
+        String fileOutputPath = "C:\\Users\\Gamusa\\Desktop\\imagenprueba1.jpg";
+
+        //tipo de imagen de salida, en este caso es jpg
+
+        String tParam = "-Tjpg";
+
+        String tOParam = "-o";
+
+        //concatenamos nuestras direcciones. Lo que hice es crear un vector, para poder editar las direcciones de entrada y salida, usando las variables antes inicializadas
+
+        //recordemos el comando en la consola de windows: C:\Archivos de programa\Graphviz 2.21\bin\dot.exe -Tjpg grafo1.txt -o grafo1.jpg Esto es lo que concatenamos en el vector siguiente:
+
+        String[] cmd = new String[5];
+        cmd[0] = dotPath;
+        cmd[1] = tParam;
+        cmd[2] = fileInputPath;
+        cmd[3] = tOParam;
+        cmd[4] = fileOutputPath;
+
+        //Invocamos nuestra clase 
+
+        Runtime rt = Runtime.getRuntime();
+
+        //Ahora ejecutamos como lo hacemos en consola
+
+        rt.exec( cmd );
+            System.out.println("correcto");
+        } catch (Exception ex) {
+        ex.printStackTrace();
+        }  finally {
+       
+        }
        
     }//GEN-LAST:event_btnverActionPerformed
 
@@ -296,6 +342,7 @@ public class JugadorPlanta extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
       
+        jugadorplanta.buscarNodoIndice(0);
         jugadorplanta.generar();
         
         try {
@@ -311,7 +358,7 @@ public class JugadorPlanta extends javax.swing.JFrame {
 
         //path de salida del grafo, es decir el path de la imagen que vamos a crear con graphviz
 
-        String fileOutputPath = "C:\\Users\\Gamusa\\Desktop\\imagenprueba.jpg";
+        String fileOutputPath = "C:\\Users\\Gamusa\\Desktop\\imagenprueba1.jpg";
 
         //tipo de imagen de salida, en este caso es jpg
 

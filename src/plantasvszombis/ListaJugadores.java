@@ -52,7 +52,7 @@ public class ListaJugadores {
         }
         return texto;
     }
-         
+        
         public void insertaFin(Usuarios dato){
         if(!esVacia()){
             Nodo nuevo=new Nodo(dato);
@@ -74,7 +74,9 @@ public class ListaJugadores {
 	    		return aux;
 	    	aux = aux.siguiente;
 	    	tamano++;
+              
 	    }
+              System.out.println("" + tamano);
 		return null;
 	}
     
@@ -109,7 +111,6 @@ public class ListaJugadores {
             
             /////////////////
             Nodo aux=nodo;
-            
             while(aux!=null){
             
                 if(aux.getSiguiente()== null){
@@ -123,8 +124,6 @@ public class ListaJugadores {
                 }
                 
                 aux=aux.getSiguiente();
-                 
-              
             }//////////////////
            
             stringnodos = stringnodos + " \n }"; 
@@ -135,8 +134,6 @@ public class ListaJugadores {
             
             //metodos
             System.out.println("entro al metodo generar");
- 
-            
  
         } catch (Exception e) {
             e.printStackTrace();
