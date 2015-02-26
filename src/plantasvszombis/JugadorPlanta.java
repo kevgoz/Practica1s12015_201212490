@@ -185,6 +185,7 @@ public class JugadorPlanta extends javax.swing.JFrame {
        // jugadorplanta.generarimagen2();
         
         
+        
     }//GEN-LAST:event_btnmenuActionPerformed
 
     private void btnaddcamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddcamposActionPerformed
