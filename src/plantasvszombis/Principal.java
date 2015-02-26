@@ -43,6 +43,8 @@ public class Principal extends javax.swing.JFrame {
         setName("Plantas vrs Zombis"); // NOI18N
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnjugadorplanta.setBackground(new java.awt.Color(0, 0, 0));
+        btnjugadorplanta.setForeground(new java.awt.Color(255, 255, 255));
         btnjugadorplanta.setText("Jugador Plantas");
         btnjugadorplanta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,6 +53,7 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(btnjugadorplanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 127, -1, -1));
 
+        btnjugadorzombi.setBackground(new java.awt.Color(0, 0, 0));
         btnjugadorzombi.setText("Jugador Zombis");
         btnjugadorzombi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,6 +62,7 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(btnjugadorzombi, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 170, -1, -1));
 
+        btniniciarjuego.setBackground(new java.awt.Color(0, 0, 0));
         btniniciarjuego.setText("Comenzar Juego");
         btniniciarjuego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,13 +71,16 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(btniniciarjuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(68, 213, -1, -1));
 
+        btneliminardatos.setBackground(new java.awt.Color(0, 0, 0));
         btneliminardatos.setText("Eliminar datos");
         getContentPane().add(btneliminardatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 213, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("MV Boli", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Plantas vrs Zombis");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 54, 263, 22));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 263, 22));
 
+        btnSalir.setBackground(new java.awt.Color(0, 0, 0));
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +92,7 @@ public class Principal extends javax.swing.JFrame {
         lblborrar.setText("jLabel2");
         getContentPane().add(lblborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 264, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Zombi5.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo1.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 310));
 
         pack();

@@ -1,13 +1,17 @@
 
 package plantasvszombis;
 
-import java.io.FileWriter;
+
 
 public class Nodo {
     
    public Usuarios datos;
+
+   public Usuarios2 datos2;
+
+   
    public int clave;
-    public Nodo siguiente;
+   public Nodo siguiente;
     
     Nodo(Usuarios datos){
     
@@ -22,6 +26,24 @@ public class Nodo {
         this.clave=clave;
         siguiente=null;
     }
+    
+     
+    Nodo(Usuarios2 datos){
+    
+        this.datos2 = datos;
+        siguiente = null;
+
+    
+    }
+    
+     public Nodo(Usuarios2 dato,int clave){
+        this.datos2 =dato;
+        this.clave=clave;
+        siguiente=null;
+    }
+    
+    
+     
     public Object getDato() {
         return datos;
     }
@@ -38,5 +60,13 @@ public class Nodo {
         this.siguiente = siguiente;
     }
     
+    
+    public Usuarios2 getDatos2() {
+        return datos2;
+    }
 
+    public void setDatos2(Usuarios2 datos2) {
+        this.datos2 = datos2;
+    }
+  
 }

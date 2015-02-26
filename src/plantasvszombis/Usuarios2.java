@@ -4,7 +4,27 @@ package plantasvszombis;
 
 public class Usuarios2 {
     
+    public String nombre;
+    public String cantidad;
+    public String otro;
+
+
+    public Usuarios2(String nombre, String cantidad) {
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+          
+    }
     
+     public Usuarios2(String otr) {
+        this.otro = otr;
+        
+          
+    }
+
+
+    Usuarios2() {
+        
+    }
 
     public String getNombre() {
         return nombre;
@@ -30,9 +50,9 @@ public class Usuarios2 {
         this.otro = otro;
     }
     
-    public String nombre;
-    public String cantidad;
-    public String otro;
-
+   @Override
+    public String toString() {
+        return nombre +"->"+cantidad;
+    }
     
 }
