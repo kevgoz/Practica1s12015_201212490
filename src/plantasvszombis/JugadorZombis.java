@@ -15,7 +15,7 @@ public class JugadorZombis extends javax.swing.JFrame {
     public JugadorZombis() {
         initComponents();
         
-        ta.setVisible(false);
+        //ta.setVisible(false);
       
        lblotro.setVisible(false);
        txtotro.setVisible(false);
@@ -57,7 +57,7 @@ public class JugadorZombis extends javax.swing.JFrame {
 //    }
       
        public void listasElementoszombi(){
-        ta.setText(jugadorplanta.presentarzombi());   
+      //  ta.setText(jugadorplanta.presentarzombi());   
         
     }
 
@@ -87,30 +87,40 @@ public class JugadorZombis extends javax.swing.JFrame {
         txtcantidad = new javax.swing.JTextField();
         txtotro = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         btnaddnewcampos = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        ta = new javax.swing.JTextArea();
         btnaddcampos = new javax.swing.JButton();
         btnmenu = new javax.swing.JButton();
         txtotro2 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("ZOMBIS");
+        jLabel1.setFont(new java.awt.Font("MV Boli", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("ZOMBI");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 130, -1));
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombre:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Cantidad:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
+        lblotro.setForeground(new java.awt.Color(0, 0, 0));
         lblotro.setText("Otro:");
+        getContentPane().add(lblotro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, 20));
+        getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 130, -1));
 
         txtcantidad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtcantidadKeyTyped(evt);
             }
         });
+        getContentPane().add(txtcantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 128, -1));
+        getContentPane().add(txtotro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 128, -1));
 
         jButton1.setText("Guardar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -118,13 +128,7 @@ public class JugadorZombis extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        jButton2.setText("Ver");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
 
         btnaddnewcampos.setText("Agregar");
         btnaddnewcampos.addActionListener(new java.awt.event.ActionListener() {
@@ -132,10 +136,7 @@ public class JugadorZombis extends javax.swing.JFrame {
                 btnaddnewcamposActionPerformed(evt);
             }
         });
-
-        ta.setColumns(20);
-        ta.setRows(5);
-        jScrollPane1.setViewportView(ta);
+        getContentPane().add(btnaddnewcampos, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
 
         btnaddcampos.setText("Agregar campos");
         btnaddcampos.addActionListener(new java.awt.event.ActionListener() {
@@ -143,6 +144,7 @@ public class JugadorZombis extends javax.swing.JFrame {
                 btnaddcamposActionPerformed(evt);
             }
         });
+        getContentPane().add(btnaddcampos, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, -1, -1));
 
         btnmenu.setText("Menu");
         btnmenu.addActionListener(new java.awt.event.ActionListener() {
@@ -150,87 +152,12 @@ public class JugadorZombis extends javax.swing.JFrame {
                 btnmenuActionPerformed(evt);
             }
         });
+        getContentPane().add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 97, 30));
+        getContentPane().add(txtotro2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 128, -1));
 
-        jButton3.setText("verplanta");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(lblotro))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtotro2, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addComponent(btnaddcampos))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(txtcantidad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
-                                        .addComponent(txtotro, javax.swing.GroupLayout.Alignment.LEADING)))
-                                .addGap(44, 44, 44)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton1)
-                                    .addComponent(btnmenu, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnaddnewcampos)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1))
-                .addContainerGap(96, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel1)
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblotro)
-                    .addComponent(txtotro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnaddnewcampos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtotro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnmenu)
-                            .addComponent(btnaddcampos)))
-                    .addComponent(jButton3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/zombi.jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 401, 354));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -254,7 +181,7 @@ public class JugadorZombis extends javax.swing.JFrame {
     private void btnaddcamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddcamposActionPerformed
         lblotro.setVisible(true);
         txtotro.setVisible(true);
-        ta.setVisible(true);
+//        ta.setVisible(true);
         btnaddnewcampos.setVisible(true);
         
         txtotro2.setVisible(true);
@@ -267,24 +194,9 @@ public class JugadorZombis extends javax.swing.JFrame {
        agregarElementos();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       ;
-        
-         ta.setVisible(true);
-     
-        listasElementoszombi();
-        //buscarElementos();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void btnaddnewcamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddnewcamposActionPerformed
         agregarElementosnuevo();
     }//GEN-LAST:event_btnaddnewcamposActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        jugadorplanta.retornornodosplanta();
-       // jugadorplanta.generarnodosplanta();
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void txtcantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcantidadKeyTyped
         // TODO add your handling code here:
@@ -333,14 +245,11 @@ public class JugadorZombis extends javax.swing.JFrame {
     private javax.swing.JButton btnaddnewcampos;
     private javax.swing.JButton btnmenu;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel lblotro;
-    private javax.swing.JTextArea ta;
     private javax.swing.JTextField txtcantidad;
     private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txtotro;

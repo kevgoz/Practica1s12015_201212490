@@ -35,7 +35,6 @@ public class Principal extends javax.swing.JFrame {
         btneliminardatos = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
-        lblborrar = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -88,9 +87,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 264, 76, -1));
-
-        lblborrar.setText("jLabel2");
-        getContentPane().add(lblborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 264, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo1.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 310));
@@ -172,6 +168,5 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnjugadorzombi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel lblborrar;
     // End of variables declaration//GEN-END:variables
 }
