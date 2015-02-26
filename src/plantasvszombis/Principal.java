@@ -122,20 +122,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void btniniciarjuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btniniciarjuegoActionPerformed
        
-          if(lista.retornornodosplanta()== null && lista.retornanodos() == null){
-        
-              JOptionPane.showMessageDialog(null,"debe ingresar los usuarios");
-          }
-        else if(lista.retornornodosplanta().length()!= 0 && lista.retornanodos().length() != 0){
-        
-        //CargarPlantas cp = new CargarPlantas();
+         
         c.setVisible(true);
         c.setLocationRelativeTo(null);
         
         this.dispose();
-        }
-        else
-            JOptionPane.showMessageDialog(null,"dotro");
+        
+      
         
     }//GEN-LAST:event_btniniciarjuegoActionPerformed
 

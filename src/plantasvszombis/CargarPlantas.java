@@ -20,7 +20,7 @@ public class CargarPlantas extends javax.swing.JFrame {
         lista.generararchivo1();
         lista.generarimagen1();
         lblnomjugador.setText(JugadorPlanta.jugador1);
-        this.cmbxtipo.addItem("Ataque");
+        this.cmbxtipo.addItem("Directo");
         this.cmbxtipo.addItem("Disparo");
     }
 
@@ -38,7 +38,6 @@ public class CargarPlantas extends javax.swing.JFrame {
         txtpuntos = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         cmbxtipo = new javax.swing.JComboBox();
-        jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         btncontinuar = new javax.swing.JButton();
@@ -47,6 +46,8 @@ public class CargarPlantas extends javax.swing.JFrame {
         btneliminar = new javax.swing.JButton();
         lblnomjugador = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,9 +70,6 @@ public class CargarPlantas extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
         getContentPane().add(cmbxtipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 125, -1));
-
-        jLabel5.setText("Imagen:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, -1, -1));
 
         btncontinuar.setText("Continuar");
         btncontinuar.addActionListener(new java.awt.event.ActionListener() {
@@ -124,9 +122,15 @@ public class CargarPlantas extends javax.swing.JFrame {
         jLabel6.setText("Jugador:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
+        jButton1.setText("Cargar imagen");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, -1, -1));
+
+        jLabel8.setText("jLabel8");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 100, 100));
+
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imgs.jpg"))); // NOI18N
         jLabel7.setText("jLabel7");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 420));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -181,13 +185,14 @@ public class CargarPlantas extends javax.swing.JFrame {
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JComboBox cmbxtipo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public static javax.swing.JLabel lblnomjugador;
