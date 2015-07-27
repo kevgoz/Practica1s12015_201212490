@@ -11,4 +11,11 @@ package plantasvszombis;
  */
 public class Tablero {
     
+    //hoelo wordk
+    
+    public Tablero()
+    {
+    
+    }
+    
 }
