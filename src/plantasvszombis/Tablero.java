@@ -12,8 +12,15 @@ package plantasvszombis;
 public class Tablero {
     
     //hoelo wordk
+    private int h;
     
     public Tablero()
+    {
+    
+        
+    }
+    
+    public void hol()
     {
     
     }
